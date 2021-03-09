@@ -1,0 +1,20 @@
+extends ../layouts/header.pug 
+block content
+
+  .container(class="p-3")  
+    h1(class="text-center") Create users
+    if error
+      each error1 in error
+        .alert.alert-danger=error1
+        
+    form(action="create" ,enctype="multipart/form-data" , method="POST") 
+      .form-group
+          label(for="name")  Name
+          input(  class="form-control  d-inline-block mx-3" placeholder="name" name='name' type='text'   value=values ? values.name : ''   )
+      .form-group
+          label(for="phone") Phone 
+          input(  class="form-control  d-inline-block mx-3" placeholder="phone" name='phone' type='text' value=values ? values.phone : ''   )
+      .form-group
+          label(for="avatar") Avatar 
+          input(  class="form-control-file  d-inline-block mx-3" placeholder="phone" name='avatar' type='file')
+      button(class= "btn btn-primary mx-4" ) Create 

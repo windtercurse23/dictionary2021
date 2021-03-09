@@ -1,0 +1,9 @@
+extends ./layouts/header.pug 
+block content
+    .container(class="text-center")
+        h1 Hello #{name}
+       
+        .logo
+            img(src="../image/logo.jpg " class="w-25", alt="logo")
+
+        a(class="btn btn-danger m-4" href="/users") See List Users   

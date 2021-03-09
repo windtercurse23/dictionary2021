@@ -1,0 +1,17 @@
+extends ../layouts/header.pug 
+block content
+
+  .container(class="p-3")  
+    h1(class="text-center") Login users
+    if error
+      each error1 in error
+        .alert.alert-danger=error1
+        
+    form(method="POST") 
+      .form-group
+          label(for="email")  Email
+          input(  class="form-control  d-inline-block mx-3" placeholder="email" name='email' type='text'   value=values ? values.email : ''   )
+      .form-group
+          label(for="password") Password 
+          input(  class=" password form-control  d-inline-block mx-3" placeholder="password" name='password' type='password' value=values ? values.password : ''   )
+      button(class= "btn btn-primary mx-4" ) Login 
